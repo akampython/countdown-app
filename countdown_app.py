@@ -34,7 +34,7 @@ target_time = datetime(2025, 6, 11, 23, 0, 0)
 countdown_placeholder = st.empty()
 
 # Display the title
-st.markdown("<h1>⏳ Countdown to 11 June 2025 - 11:00 PM</h1>", unsafe_allow_html=True)
+st.markdown("<h1>⏳ كاتی ماوە بۆ ئاهەنگ گێڕان</h1>", unsafe_allow_html=True)
 
 # 🕓 Countdown Logic
 while True:
