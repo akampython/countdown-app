@@ -1,6 +1,5 @@
 import streamlit as st
 from datetime import datetime
-import time
 
 # Set Streamlit page settings
 st.set_page_config(
@@ -30,6 +29,9 @@ st.markdown("""
 # 🕓 Target datetime: 11 June 2025 at 11:00 PM
 target_time = datetime(2025, 6, 11, 23, 0, 0)
 
+# 🌟 Use Streamlit's auto-refresh every second
+st.autorefresh(interval=1000)  # Refresh the page every 1000 milliseconds (1 second)
+
 # Display the title
 st.markdown("<h1>⏳ Countdown to 11 June 2025 - 11:00 PM</h1>", unsafe_allow_html=True)
 
@@ -46,8 +48,5 @@ def update_countdown():
         countdown_str = f"{days}d {hours}h {minutes}m {seconds}s"
         st.markdown(f"<div class='countdown'>{countdown_str}</div>", unsafe_allow_html=True)
 
-# Update the countdown once every second using Streamlit's rerun functionality
-while True:
-    update_countdown()
-    time.sleep(1)  # Wait for 1 second before updating again
-    st.experimental_rerun()  # Forces Streamlit to re-run the script and refresh the countdown
+# Call the countdown update function
+update_countdown()
