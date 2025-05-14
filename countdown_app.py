@@ -1,10 +1,9 @@
 import streamlit as st
 from datetime import datetime
 
-# Page config
 st.set_page_config(page_title="Countdown Timer", layout="centered")
 
-# CSS for dark background and red text
+# Dark theme + red text
 st.markdown("""
     <style>
         body {
@@ -18,18 +17,18 @@ st.markdown("""
             color: #FF4B4B;
         }
         h1 {
-            text-align: center;
             color: #FF4B4B;
+            text-align: center;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# ✅ JavaScript to refresh the page every 1000 ms (1 second)
+# 🔁 Auto-refresh every 0.75 seconds (750 ms)
 st.markdown("""
     <script>
         setTimeout(function(){
-           window.location.reload();
-        }, 1000);
+           window.location.reload(1);
+        }, 750);
     </script>
 """, unsafe_allow_html=True)
 
