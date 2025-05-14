@@ -4,10 +4,10 @@ from datetime import datetime
 # Set page config
 st.set_page_config(page_title="Countdown Timer", layout="centered")
 
-# Auto-refresh the page every 1 second
-st.experimental_autorefresh(interval=1000, key="refresh")
+# ✅ Auto-refresh every second
+st.autorefresh(interval=1000, key="refresh")
 
-# Inject custom CSS
+# Inject CSS for dark theme and red text
 st.markdown("""
     <style>
         .main {
