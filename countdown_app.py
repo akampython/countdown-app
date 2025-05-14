@@ -1,9 +1,10 @@
 import streamlit as st
 from datetime import datetime
 
+# Page config
 st.set_page_config(page_title="Countdown Timer", layout="centered")
 
-# Custom styles for dark mode and red text
+# CSS for dark background and red text
 st.markdown("""
     <style>
         body {
@@ -17,17 +18,17 @@ st.markdown("""
             color: #FF4B4B;
         }
         h1 {
-            color: #FF4B4B;
             text-align: center;
+            color: #FF4B4B;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# ✅ JavaScript to reload the page every 1 second
+# ✅ JavaScript to refresh the page every 1000 ms (1 second)
 st.markdown("""
     <script>
         setTimeout(function(){
-           window.location.reload(1);
+           window.location.reload();
         }, 1000);
     </script>
 """, unsafe_allow_html=True)
@@ -35,7 +36,7 @@ st.markdown("""
 # Title
 st.markdown("<h1>⏳ Countdown to 11 June 2025 - 11:00 PM</h1>", unsafe_allow_html=True)
 
-# Countdown calculation
+# Countdown logic
 target_time = datetime(2025, 6, 11, 23, 0, 0)
 now = datetime.now()
 
