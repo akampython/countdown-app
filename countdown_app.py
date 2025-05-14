@@ -4,7 +4,7 @@ import time
 
 # Set Streamlit page settings
 st.set_page_config(
-    page_title="Countdown to 11 June 2025",
+    page_title="كاتی ئاهەنگ گێڕان",
     layout="centered"
 )
 
