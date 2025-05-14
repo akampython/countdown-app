@@ -1,12 +1,15 @@
 import streamlit as st
 from datetime import datetime
-import time
 
 st.set_page_config(page_title="Countdown Timer", layout="centered")
 
-# Styling
+# Custom styles for dark mode and red text
 st.markdown("""
     <style>
+        body {
+            background-color: #0e1117;
+            color: #FF4B4B;
+        }
         .countdown {
             font-size: 48px;
             font-weight: bold;
@@ -17,11 +20,16 @@ st.markdown("""
             color: #FF4B4B;
             text-align: center;
         }
-        body {
-            background-color: #0e1117;
-            color: #FF4B4B;
-        }
     </style>
+""", unsafe_allow_html=True)
+
+# ✅ JavaScript to reload the page every 1 second
+st.markdown("""
+    <script>
+        setTimeout(function(){
+           window.location.reload(1);
+        }, 1000);
+    </script>
 """, unsafe_allow_html=True)
 
 # Title
@@ -40,7 +48,3 @@ else:
     minutes, seconds = divmod(rem, 60)
     countdown_text = f"{days}d {hours}h {minutes}m {seconds}s"
     st.markdown(f"<div class='countdown'>{countdown_text}</div>", unsafe_allow_html=True)
-
-    # Wait 1 second and rerun the app
-    time.sleep(1)
-    st.experimental_rerun()
