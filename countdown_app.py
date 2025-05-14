@@ -1,16 +1,13 @@
 import streamlit as st
 from datetime import datetime
 
-# Set page config
+# Set page configuration
 st.set_page_config(page_title="Countdown Timer", layout="centered")
 
-# ✅ Auto-refresh every second using experimental method
-st.experimental_autorefresh(interval=1000, key="refresh")
-
-# Inject CSS for dark theme and red text
+# Styling
 st.markdown("""
     <style>
-        .main {
+        body {
             background-color: #0e1117;
             color: #FF4B4B;
         }
@@ -18,10 +15,8 @@ st.markdown("""
             font-size: 48px;
             font-weight: bold;
             text-align: center;
-            color: #FF4B4B;
         }
         h1 {
-            color: #FF4B4B;
             text-align: center;
         }
     </style>
@@ -41,6 +36,5 @@ else:
     days = remaining.days
     hours, rem = divmod(remaining.seconds, 3600)
     minutes, seconds = divmod(rem, 60)
-
     countdown_text = f"{days}d {hours}h {minutes}m {seconds}s"
     st.markdown(f"<div class='countdown'>{countdown_text}</div>", unsafe_allow_html=True)
